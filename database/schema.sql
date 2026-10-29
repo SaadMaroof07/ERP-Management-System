@@ -1,13 +1,4 @@
--- ============================================================================
--- Aptura ERP System - PostgreSQL schema reference
--- Mirrors what `python manage.py migrate` generates from the Django models
--- in accounts/, employees/, inventory/, sales/. Migrations are the source
--- of truth; this file is a plain-SQL reference for the "Database Design"
--- submission requirement and for direct inspection.
---
--- Live export at any time:
---   pg_dump -U erp_user -d erp_db --schema-only > database/schema_live.sql
--- ============================================================================
+
 
 CREATE TABLE IF NOT EXISTS auth_user (
     id SERIAL PRIMARY KEY,
@@ -129,11 +120,10 @@ CREATE TABLE IF NOT EXISTS sales_saleitem (
     id SERIAL PRIMARY KEY,
     sale_id INTEGER NOT NULL REFERENCES sales_sale(id) ON DELETE CASCADE,
     product_id INTEGER REFERENCES inventory_product(id) ON DELETE SET NULL,
-    product_name VARCHAR(200) NOT NULL,   -- snapshot at sale time
-    unit_price NUMERIC(12, 2) NOT NULL,   -- snapshot at sale time
+    product_name VARCHAR(200) NOT NULL,   
+    unit_price NUMERIC(12, 2) NOT NULL,   
     quantity INTEGER NOT NULL CHECK (quantity >= 1)
 );
 CREATE INDEX IF NOT EXISTS idx_saleitem_sale ON sales_saleitem(sale_id);
 
--- rest_framework_simplejwt also creates token_blacklist_outstandingtoken and
--- token_blacklist_blacklistedtoken via its own migrations.
+
