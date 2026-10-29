@@ -1,7 +1,4 @@
-"""
-Django settings for erp_backend project.
-Enterprise Resource Management (ERP) System - Aptura Tech Solutions Internship (Batch 02, Week 03)
-"""
+"""Django settings for the Aptura ERP project."""
 
 from pathlib import Path
 from datetime import timedelta
