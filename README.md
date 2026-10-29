@@ -1,8 +1,8 @@
-# Aptura ERP
+#  ERP
 
 ## Overview
 
-Aptura ERP (Enterprise Resource Planning System) is a business management application for handling employee records, inventory, sales, and reporting from a single platform. It provides a web-based interface connected to a REST API, with access to system modules controlled by user roles.
+ERP (Enterprise Resource Planning System) is a business management application for handling employee records, inventory, sales, and reporting from a single platform. It provides a web-based interface connected to a REST API, with access to system modules controlled by user roles.
 
 ## Features
 
